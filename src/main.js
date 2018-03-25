@@ -5,17 +5,25 @@ const shifts = [null, "one", "two", "three", "four"];
 
 const firstOrSecond = i => (i % 2 == 0 ? "first" : "second");
 
-const difference = Date.now() - new Date(2018, 0, 2);
+const today = new Date();
+today.setHours(0, 0, 0, 0);
 
-const offset = Math.floor(difference / 8.64e7) % 8;
+const referenceDate = new Date(2018, 0, 2);
+referenceDate.setHours(0, 0, 0, 0);
+
+const difference = today - referenceDate;
+
+const offset = Math.ceil(difference / 8.64e7) % 8;
 
 const day = document.createElement("div");
 day.className = `${shifts[days[offset]]} shift`;
-day.innerHTML = `${days[offset]} shift<br>${firstOrSecond(offset)} day`;
+day.innerHTML = `${shifts[days[offset]]} shift<br>${firstOrSecond(offset)} day`;
 
 const night = document.createElement("div");
 night.className = `${shifts[nights[offset]]} shift`;
-night.innerHTML = `${nights[offset]} shift<br>${firstOrSecond(offset)} night`;
+night.innerHTML = `${shifts[nights[offset]]} shift<br>${firstOrSecond(
+  offset
+)} night`;
 
 document.addEventListener("DOMContentLoaded", function(event) {
   document.body.appendChild(day);

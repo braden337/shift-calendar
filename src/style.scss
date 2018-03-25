@@ -1,8 +1,12 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+body {
+  background-color: black;
+}
+
 @mixin shiftColor($color) {
   background-color: $color;
-  color: darken($color, 35%);
+  color: darken($color, 20%);
 }
 
 .one {
@@ -26,6 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 3rem;
+  font-weight: bold;
   text-align: center;
 }
