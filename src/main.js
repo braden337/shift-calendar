@@ -1,31 +1,39 @@
+import Vue from "vue/dist/vue.esm.js";
+import Datepicker from "vuejs-datepicker";
+
 const days = [1, 1, 2, 2, 3, 3, 4, 4];
 const nights = [4, 4, 1, 1, 2, 2, 3, 3];
 
-const shifts = [null, "one", "two", "three", "four"];
-
-const firstOrSecond = i => (i % 2 == 0 ? "first" : "second");
-
-const today = new Date();
-today.setHours(0, 0, 0, 0);
+const shifts = [null, "ONE", "TWO", "THREE", "FOUR"];
 
 const referenceDate = new Date(2018, 0, 2);
 referenceDate.setHours(0, 0, 0, 0);
 
-const difference = today - referenceDate;
-
-const offset = Math.ceil(difference / 8.64e7) % 8;
-
-const day = document.createElement("div");
-day.className = `${shifts[days[offset]]} shift`;
-day.innerHTML = `${shifts[days[offset]]} shift<br>${firstOrSecond(offset)} day`;
-
-const night = document.createElement("div");
-night.className = `${shifts[nights[offset]]} shift`;
-night.innerHTML = `${shifts[nights[offset]]} shift<br>${firstOrSecond(
-  offset
-)} night`;
-
-document.addEventListener("DOMContentLoaded", function(event) {
-  document.body.appendChild(day);
-  document.body.appendChild(night);
+const app = new Vue({
+  el: "#app",
+  components: {
+    Datepicker
+  },
+  data: {
+    date: new Date()
+  },
+  computed: {
+    day: function() {
+      return shifts[days[this.offset()]];
+    },
+    night: function() {
+      return shifts[nights[this.offset()]];
+    },
+    firstOrSecond: function() {
+      return this.offset() % 2 == 0 ? "First" : "Second";
+    }
+  },
+  methods: {
+    offset: function() {
+      this.date.setHours(0, 0, 0, 0);
+      const difference = this.date - referenceDate;
+      const offset = Math.ceil(difference / 864e5) % 8;
+      return offset < 0 ? offset + 8 : offset;
+    }
+  }
 });

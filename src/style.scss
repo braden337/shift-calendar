@@ -9,28 +9,51 @@ body {
   color: darken($color, 20%);
 }
 
-.one {
+.ONE {
   @include shiftColor($blue);
 }
 
-.two {
+.TWO {
   @include shiftColor($yellow);
 }
 
-.three {
+.THREE {
   @include shiftColor($green);
 }
 
-.four {
+.FOUR {
   @include shiftColor($red);
 }
 
 .shift {
-  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
+}
+
+#day,
+#night {
+  height: 42.5vh;
+}
+
+#date {
+  // @extend .shift;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include shiftColor($dark);
+}
+
+.vdp-datepicker:nth-child(1) input {
+  text-align: center;
+  background-color: $dark;
+  color: $light;
+  font-size: 2rem;
+  font-weight: bold;
+  width: 20rem;
+  border: none;
 }

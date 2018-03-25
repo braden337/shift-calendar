@@ -7,12 +7,27 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
-  <title>Shift Calendar</title>
+  <link rel="apple-touch-icon" href="./shifter-icon.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <title>Shifter</title>
   <link rel="stylesheet" href="./style.scss">
-  <script src="./main.js"></script>
 </head>
 
-<body></body>
+<body>
+  <div id="app">
+    <div id="date">
+      <datepicker v-model="date" format="MMM d (D)"></datepicker>
+    </div>
+    <div id="day" :class="[day, 'shift']">
+      {{day}} Shift
+      <br>{{firstOrSecond}} Day
+    </div>
+    <div id="night" :class="[night, 'shift']">
+      {{night}} Shift
+      <br>{{firstOrSecond}} Night
+    </div>
+  </div>
+  <script src=" ./main.js "></script>
+</body>
 
 </html>

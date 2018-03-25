@@ -1,8 +1,7 @@
 {
   "name": "shift-calendar",
   "version": "1.0.0",
-  "description":
-    "Shift calendar for places with four shifts that work two days, two nights and then have four days off",
+  "description": "Shift calendar for places with four shifts that work two days, two nights and then have four days off",
   "main": "index.js",
   "scripts": {
     "start": "parcel ./src/index.html",
@@ -23,6 +22,8 @@
   "devDependencies": {
     "bootstrap": "^4.0.0",
     "node-sass": "^4.7.2",
-    "parcel-bundler": "^1.6.2"
+    "parcel-bundler": "^1.6.2",
+    "vue": "^2.5.16",
+    "vuejs-datepicker": "^0.9.29"
   }
 }

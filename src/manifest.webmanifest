@@ -1,0 +1,15 @@
+{
+  "name": "Shifter",
+  "short_name": "Shifter",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#000",
+  "description": "Find out which shifts are working.",
+  "icons": [
+    {
+      "src": "./shifter-icon.png",
+      "sizes": "1207x1207",
+      "type": "image/png"
+    }
+  ]
+}
