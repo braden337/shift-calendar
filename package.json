@@ -1,12 +1,13 @@
 {
   "name": "shift-calendar",
   "version": "1.0.0",
-  "description": "Shift calendar for places with four shifts that work two days, two nights and then have four days off",
+  "description":
+    "Shift calendar for places with four shifts that work two days, two nights and then have four days off",
   "main": "index.js",
   "scripts": {
     "start": "parcel ./src/index.html",
     "build": "parcel build ./src/index.html --public-url /shift-calendar",
-    "deploy": "gh-pages -d dist",
+    "deploy": "npm run clean && npm run build && gh-pages -d dist",
     "clean": "rm -rf dist"
   },
   "repository": {
