@@ -1,26 +1,26 @@
 {
-  "name": "shift-calendar",
+  "name": "shifter",
   "version": "1.0.0",
-  "description": "Shift calendar for places with four shifts that work two days, two nights and then have four days off",
+  "description": "Shifter is a shift calendar for places with four shifts that work two days, two nights and then have four days off.",
   "main": "index.js",
   "scripts": {
     "start": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html --public-url /shift-calendar",
+    "build": "parcel build ./src/index.html --public-url /shifter",
     "deploy": "npm run clean && npm run build && gh-pages -d dist",
     "clean": "rm -rf dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/braden337/shift-calendar.git"
+    "url": "git+https://github.com/braden337/shifter.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/braden337/shift-calendar/issues"
+    "url": "https://github.com/braden337/shifter/issues"
   },
-  "homepage": "https://github.com/braden337/shift-calendar#readme",
+  "homepage": "https://github.com/braden337/shifter#readme",
   "devDependencies": {
     "bootstrap": "^4.0.0",
+    "gh-pages": "^1.1.0",
     "node-sass": "^4.7.2",
     "parcel-bundler": "^1.6.2",
     "vue": "^2.5.16",
