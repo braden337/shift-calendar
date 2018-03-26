@@ -1,12 +1,16 @@
 {
   "name": "shifter",
   "version": "1.0.0",
-  "description": "Shifter is a shift calendar for places with four shifts that work two days, two nights and then have four days off.",
+  "description":
+    "Shifter is a shift calendar for places with four shifts that work two days, two nights and then have four days off.",
   "main": "index.js",
   "scripts": {
     "start": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html --public-url /shifter",
-    "deploy": "npm run clean && npm run build && gh-pages -d dist",
+    "gh":
+      "npm run clean && parcel build ./src/index.html --public-url /shifter && gh-pages -d dist",
+    "surge":
+      "npm run clean && parcel build ./src/index.html --public-url ./ && surge dist https://shifter.surge.sh",
+    "deploy": "npm run surge && npm run gh",
     "clean": "rm -rf dist"
   },
   "repository": {
@@ -23,6 +27,7 @@
     "gh-pages": "^1.1.0",
     "node-sass": "^4.7.2",
     "parcel-bundler": "^1.6.2",
+    "surge": "^0.20.1",
     "vue": "^2.5.16",
     "vuejs-datepicker": "^0.9.29"
   }
