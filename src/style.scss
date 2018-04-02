@@ -1,7 +1,7 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 body {
-  background-color: black;
+  background-color: $dark;
 }
 
 @mixin shiftColor($color) {
@@ -39,21 +39,45 @@ body {
   height: 42.5vh;
 }
 
+#night::after {
+  position: fixed;
+  top: 50vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  content: '';
+  background-color: inherit;
+}
+
 #date {
-  // @extend .shift;
   height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  @include shiftColor($dark);
+  background-color: $dark;
 }
 
-.vdp-datepicker:nth-child(1) input {
-  text-align: center;
+.vdp-datepicker > div > input {
   background-color: $dark;
   color: $light;
   font-size: 2rem;
   font-weight: bold;
+  text-align: center;
   width: 20rem;
   border: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.vdp-datepicker__calendar {
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.vdp-datepicker__calendar .selected {
+  background: $dark !important;
+  color: $light;
 }

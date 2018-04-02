@@ -15,7 +15,11 @@ const app = new Vue({
     Datepicker
   },
   data: {
-    date: new Date()
+    date: (function() {
+      let d = new Date();
+      d.setHours(0, 0, 0, 0);
+      return d;
+    })()
   },
   computed: {
     day: function() {
@@ -30,7 +34,6 @@ const app = new Vue({
   },
   methods: {
     offset: function() {
-      this.date.setHours(0, 0, 0, 0);
       const difference = this.date - referenceDate;
       const offset = Math.ceil(difference / 864e5) % 8;
       return offset < 0 ? offset + 8 : offset;
