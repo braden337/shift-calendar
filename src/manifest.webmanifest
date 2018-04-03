@@ -1,9 +1,10 @@
 {
   "name": "Shifter",
   "short_name": "Shifter",
-  "start_url": "/index.html",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#000",
+  "background_color": "#343a40",
   "description": "Find out which shifts are working.",
   "icons": [
     {
